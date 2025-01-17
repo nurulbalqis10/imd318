@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eye Product Design</title>
+    <style>
+       body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #4e2c2c;
+            color: #fff;
+        }
+
+        header {
+            background-color: #fff;
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            color: #583036;
+            font-size: 2rem;
+        }
+
+        nav {
+            background-color: #f7c7d9;
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #734047;
+            font-size: 1rem;
+            margin: 0 15px;
+            font-weight: bold;
+            position: relative;
+            cursor: pointer;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        nav a:active {
+            transform: scale(1.1);
+            transition: transform 0.2s ease;
+        }
+
+        .banner {
+            width: 100%;
+            max-height: 250px; /* Set maximum height for a smaller banner */
+            object-fit: cover;
+            display: block;
+        }
+
+        .section-title {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 2.5rem;
+            color: #c5a1a1;
+        }
+
+        .products-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .product-card {
+            background-color: #734047;
+            border-radius: 10px;
+            padding: 15px;
+            width: 200px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            margin: 20px;
+            position: relative;
+        }
+
+        .product-card img {
+            width: 100%;
+            border-radius: 10px;
+            border: 4px solid transparent;
+            box-shadow: 0 0 10px rgba(255, 105, 135, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product-card img:hover {
+            transform: scale(1.2);
+            box-shadow: 0 0 20px rgba(255, 105, 135, 0.9);
+        }
+
+        .color-options {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 10px 0;
+        }
+
+        .color-option {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 2px solid transparent;
+            cursor: pointer;
+        }
+
+        .color-option.selected {
+            border-color: #734047;
+            transform: scale(1.2);
+        }
+
+        .product-name {
+            font-size: 1rem;
+            color: #c5a1a1;
+            margin: 10px 0;
+        }
+
+        .product-shade {
+            font-size: 0.9rem;
+            color: #fff;
+            margin: 5px 0;
+        }
+
+      /* Music Button */
+ .music-container {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+        }
+
+        .music-btn {
+            background-color: pink;
+            color: white;
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .music-btn:hover {
+            background-color: #734047;
+            transform: scale(1.1);
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>BREENA BEAUTY</h1>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="lips.html">Lips</a>
+        <a href="eye.html" class="active">Eye</a>
+        <a href="face.html">Face</a>
+    </nav>
+
+    <div class="music-container">
+        <button id="music-btn" class="music-btn" onclick="toggleMusic()">Play Music 🎵</button>
+    </div>
+
+    <img src="bannereye.jpeg" alt="Eye Banner" class="banner">
+
+    <div class="section-title">Eye Product</div>
+
+    <div class="products-container">
+        <div class="product-card">
+            <img src="mascara.jpeg" alt="MAGIC WAND MASCARA">
+            <h3>MAGIC WAND MASCARA</h3>
+            <p>Coast your lashes with a waterproof tubing polymer, thickening powders, carbon-balck pigments, and smudge-proof technology that will leave your lashes looking thicker, longer, and more defined all day.</p>
+            <div class="color-options">
+                <div class="color-option" style="background-color: #fff;" data-description="Mini size MYR 14.90"></div>
+                <div class="color-option" style="background-color: #fff;" data-description="Full size MYR 37.00"></div>
+            </div>
+            <p class="description"></p>
+        </div>
+
+        <div class="product-card">
+            <img src="eyeliner.jpeg" alt="PURRFECT LINE EYELINER">
+            <h3>PURRFECT LINE EYELINER</h3>
+           <h4><p>MYR 28.00</p></h4> 
+           <p>Intense semi-matte black pigment, built with a 0.05mm pinpoint tip gives the flexibility to draw your sexy winged cat eye look in no time!</p>
+            <div class="color-options">
+                <div class="color-option" style="background-color: #fff;" data-description="Thick"></div>
+                <div class="color-option" style="background-color: #fff;" data-description="Thin"></div>
+            </div>
+            <p class="description"></p>
+        </div>
+
+        <div class="product-card">
+            <img src="browpencil.jpeg" alt="Super Fun Brow Pencil">
+            <h3>SUPERFINE BROW PENCIL</h3>
+            <h4><p>MYR 30.00</p></h4>
+            <p>A micro-fine eyebrow pencil designed to fill and define brows with precision. It features a built-in spoolie for blending and a retractable tip, eliminating the need for sharpening.</p>
+            <div class="color-options">
+                <div class="color-option" style="background-color: #d4a5a5;" data-description="Soft black"></div>
+                <div class="color-option" style="background-color: #b56767;" data-description="Dark Brown"></div>
+                <div class="color-option" style="background-color: #f3c1c6;" data-description="Warm brown"></div>
+            </div>
+            <p class="description"></p>
+        </div>
+
+        <div class="product-card">
+            <img src="eyeshadow.jpeg" alt="Wonderlust Eyeshadow Palette">
+            <h3>WONDERLUST EYESHADOW PALLETE</h3>
+           <h4><p>MYR 99.00</p></h4> 
+           <p>Eyeshadow with 15 highly pigmented warm neutral shades, offering a versatile mix of matte, satin and shimmer finishes suitable for various ocassions and skin tones</p>
+            <div class="color-options">
+                <div class="color-option" style="background-color: #d4a5a5;" data-description="Sand"></div>
+                <div class="color-option" style="background-color: #b56767;" data-description="Enchanted"></div>
+                <div class="color-option" style="background-color: #f3c1c6;" data-description="Diary"></div>
+            </div>
+            <p class="description"></p>
+        </div>
+
+        <div class="product-card">
+            <img src="purrfectmascara.jpeg" alt="Purrfect Lash Mascara">
+            <h3>PURRFECT LASH MASCARA</h3>
+           <h4><p>MYR 28.00</p></h4>
+           <p>Get next level lashes with purrfectlash mascara. The volumizing vitamin E, Argan Oil and collagen-infused formula gives you big volume with no clumps that stay all day</p>
+            <div class="color-options">
+                <div class="color-option" style="background-color: #fff;" data-description="Thick"></div>
+                <div class="color-option" style="background-color: #fff;" data-description="Thin"></div>
+            </div>
+            <p class="description"></p>
+        </div>
+
+        <script>
+            const productCards = document.querySelectorAll('.product-card');
+    
+            productCards.forEach(card => {
+                const colorOptions = card.querySelectorAll('.color-option');
+                const description = card.querySelector('.description');
+    
+                colorOptions.forEach(option => {
+                    option.addEventListener('click', () => {
+                        // Remove "selected" class from all options in this card
+                        colorOptions.forEach(opt => opt.classList.remove('selected'));
+    
+                        // Add "selected" class to the clicked option
+                        option.classList.add('selected');
+    
+                        // Display the description for the selected color
+                        description.textContent = option.getAttribute('data-description');
+                        description.style.display = 'block';
+                    });
+                });
+            });
+        
+    const music = new Audio("music.mp3");
+    const musicButton = document.getElementById("music-btn");
+
+    // Restore music state
+    const isMusicPlaying = localStorage.getItem("musicPlaying") === "true";
+
+    if (isMusicPlaying) {
+        music.play();
+        music.loop = true;
+        musicButton.textContent = "Pause Music ⏸️";
+    }
+
+    // Music toggle
+    function toggleMusic() {
+        if (music.paused) {
+            music.play();
+            music.loop = true;
+            localStorage.setItem("musicPlaying", "true");
+            musicButton.textContent = "Pause Music ⏸️";
+        } else {
+            music.pause();
+            localStorage.setItem("musicPlaying", "false");
+            musicButton.textContent = "Play Music 🎵";
+        }
+    }
+        </script>
+
+</body>
+</html>
