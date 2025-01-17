@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lips Products</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #4e2c2c;
+            color: #fff;
+        }
+
+        header {
+            background-color: #fff;
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            color: #583036;
+            font-size: 2rem;
+        }
+
+        nav {
+            background-color: #f7c7d9;
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #734047;
+            font-size: 1rem;
+            margin: 0 15px;
+            font-weight: bold;
+            position: relative;
+            cursor: pointer;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        nav a:active {
+            transform: scale(1.1);
+            transition: transform 0.2s ease;
+        }
+
+        .banner {
+            width: 100%;
+            max-height: 250px; /* Set maximum height for a smaller banner */
+            object-fit: cover;
+            display: block;
+        }
+
+        .section-title {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 2.5rem;
+            color: #c5a1a1;
+        }
+
+        .products-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .product-card {
+            background-color: #734047;
+            border-radius: 10px;
+            padding: 15px;
+            width: 200px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            margin: 20px;
+            position: relative;
+        }
+
+        .product-card img {
+            width: 100%;
+            border-radius: 10px;
+            border: 4px solid transparent;
+            box-shadow: 0 0 10px rgba(255, 105, 135, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product-card img:hover {
+            transform: scale(1.2);
+            box-shadow: 0 0 20px rgba(255, 105, 135, 0.9);
+        }
+
+        .color-options {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 10px 0;
+        }
+
+        .color-option {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 2px solid transparent;
+            cursor: pointer;
+        }
+
+        .color-option.selected {
+            border-color: #734047;
+            transform: scale(1.2);
+        }
+
+        .product-name {
+            font-size: 1rem;
+            color: #c5a1a1;
+            margin: 10px 0;
+        }
+
+        .product-shade {
+            font-size: 0.9rem;
+            color: #fff;
+            margin: 5px 0;
+        }
+
+       /* Music Button */
+ .music-container {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+        }
+
+        .music-btn {
+            background-color: pink;
+            color: white;
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .music-btn:hover {
+            background-color: #734047;
+            transform: scale(1.1);
+        }
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>BREENA BEAUTY</h1>
+    </header>
+    
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="lips.html" class="active">Lips</a>
+        <a href="eye.html">Eye</a>
+        <a href="face.html">Face</a>
+    </nav>
+
+    <div class="music-container">
+        <button id="music-btn" class="music-btn" onclick="toggleMusic()">Play Music 🎵</button>
+    </div>
+
+    <img src="bannerlips.jpeg" alt="Lips Banner" class="banner">
+
+    <div class="section-title">Lips Product</div>
+
+    <div class="products-container">
+        <div class="product-card">
+            <img src="lipcream.jpeg" alt="Matte Lip Cream">
+            <h3>MATTE LIP CREAM</h3>
+           <h4><p>MYR 59.00</p></h4>
+            <p>Experience yourself a lip cream that is soft, non-drying, non-sticky, transfer-proof but easy to remove</p>
+            <div class="color-options">
+                <div class="color-option" style="background-color: #d4a5a5;" data-description="Terracotta nude"></div>
+                <div class="color-option" style="background-color: #b56767;" data-description="Brown nude"></div>
+                <div class="color-option" style="background-color: #f3c1c6;" data-description="Peachy nude"></div>
+            </div>
+            <p class="description"></p>
+        </div>
+
+        <div class="product-card">
+            <img src="lipglow.jpeg" alt="Lip Glow">
+            <h3>LIP GLOW</h3>
+            <h4><p>MYR 40.00</p></h4>
+            <p>Lightweight, sheer, and ultra-moisturizing lip balm designed to treat and care for your lips</p>
+            <div class="color-options">
+                <div class="color-option" style="background-color: #d4a5a5;" data-description="Red Poppy"></div>
+                <div class="color-option" style="background-color: #b56767;" data-description="Peony Peach"></div>
+                <div class="color-option" style="background-color: #f3c1c6;" data-description="Baby Rose"></div>
+            </div>
+            <p class="description"></p>
+        </div>
+
+        <div class="product-card">
+            <img src="velvetcream.jpeg" alt="Lipstick">
+            <h3>VELVETCREME MATTE LIPSTICK</h3>
+            <h4><p>MYR 39.00</p></h4>
+            <p>A long lasting, kiss proof liquid lipstick that provides a velvet matte finish</p>
+            <div class="color-options">
+                <div class="color-option" style="background-color: #d4a5a5;" data-description="Bunny"></div>
+                <div class="color-option" style="background-color: #b56767;" data-description="Peachcake"></div>
+                <div class="color-option" style="background-color: #f3c1c6;" data-description="Milkshake"></div>
+            </div>
+            <p class="description"></p>
+        </div>
+    
+    <script>
+        const productCards = document.querySelectorAll('.product-card');
+
+        productCards.forEach(card => {
+            const colorOptions = card.querySelectorAll('.color-option');
+            const description = card.querySelector('.description');
+
+            colorOptions.forEach(option => {
+                option.addEventListener('click', () => {
+                    // Remove "selected" class from all options in this card
+                    colorOptions.forEach(opt => opt.classList.remove('selected'));
+
+                    // Add "selected" class to the clicked option
+                    option.classList.add('selected');
+
+                    // Display the description for the selected color
+                    description.textContent = option.getAttribute('data-description');
+                    description.style.display = 'block';
+                });
+            });
+        });
+    
+    const music = new Audio("music.mp3");
+    const musicButton = document.getElementById("music-btn");
+
+    // Restore music state
+    const isMusicPlaying = localStorage.getItem("musicPlaying") === "true";
+
+    if (isMusicPlaying) {
+        music.play();
+        music.loop = true;
+        musicButton.textContent = "Pause Music ⏸️";
+    }
+
+    // Music toggle
+    function toggleMusic() {
+        if (music.paused) {
+            music.play();
+            music.loop = true;
+            localStorage.setItem("musicPlaying", "true");
+            musicButton.textContent = "Pause Music ⏸️";
+        } else {
+            music.pause();
+            localStorage.setItem("musicPlaying", "false");
+            musicButton.textContent = "Play Music 🎵";
+        }
+    }
+
+    </script>
+</body>
+</html>

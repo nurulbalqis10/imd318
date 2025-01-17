@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breena Beauty</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff5fb;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #fff;
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            margin: 0;
+            color: #583036;
+            font-size: 2rem;
+        }
+
+        nav {
+            background-color: #ffc6dc;
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+        }
+        nav a {
+            text-decoration: none;
+            color: #583036;
+            font-size: 1rem;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .hero {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .hero img {
+            width: 80%;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .recommendation {
+            text-align: center;
+            padding: 20px;
+            background-color: #fff5fb;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            width: 80%;
+            margin: 20px auto;
+        }
+
+        .recommendation h2 {
+            color: #734047;
+            margin-bottom: 10px;
+            text-shadow: 0 0 8px rgba(115, 64, 71, 0.7);
+        }
+
+        .products {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+
+        .product-card {
+            position: relative;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            width: 200px;
+            text-align: center;
+            margin: 20px;
+        }
+
+        .product-card img {
+            width: 100%;
+            border-radius: 10px;
+            border: 4px solid transparent;
+            box-shadow: 0 0 10px rgba(255, 105, 135, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Hover popup styling */
+        .product-card:hover img {
+            transform: scale(1.1);
+            box-shadow: 0 0 15px rgba(255, 105, 135, 0.7);
+        }
+
+        .product-card::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .product-card:hover::before {
+            opacity: 1;
+        }
+ /* Music Button */
+ .music-container {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+        }
+
+        .music-btn {
+            background-color: pink;
+            color: white;
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .music-btn:hover {
+            background-color: #734047;
+            transform: scale(1.1);
+        }
+
+        footer {
+            background-color: #734047;
+            color: #fff;
+            padding: 20px 0;
+            font-size: 14px;
+            margin-top: auto;
+        }
+
+        footer .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 20px;
+        }
+
+        footer .footer-content div {
+            max-width: 200px;
+        }
+
+        footer .footer-content h4 {
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        footer .footer-content ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        footer .footer-content ul li {
+            margin: 5px 0;
+        }
+
+        footer .footer-content ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        footer .social {
+            display: flex;
+            gap: 10px;
+        }
+
+        footer .social a img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+        }
+
+        footer .bottom-bar {
+            border-top: 1px solid #444;
+            text-align: center;
+            margin-top: 20px;
+            padding-top: 10px;
+            font-size: 12px;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>BREENA BEAUTY</h1>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="lips.html">Lips</a>
+        <a href="eye.html">Eye</a>
+        <a href="face.html">Face</a>
+    </nav>
+
+    <div class="music-container">
+        <button id="music-btn" class="music-btn" onclick="toggleMusic()">Play Music 🎵</button>
+    </div>
+
+    <div class="hero">
+        <video autoplay muted loop playsinline>
+            <source src="videobanner.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <div class="recommendation">
+        <h2>Our Recommendation</h2>
+        <p>TOP PICKS: The bestsellers everyone loves</p>
+        <div class="products">
+            <div class="product-card">
+                <img src="lipcream.jpeg" alt="Matte Lip Cream">
+                <h3>Matte Lip Cream</h3>
+                <p>MYR 59.00</p>
+            </div>
+
+            <div class="product-card">
+                <img src="mascara.jpeg" alt="Magic Wand Mascara">
+                <h3>Magic Wand Mascara</h3>
+                <p>MYR 37.00</p>
+            </div>
+
+            <div class="product-card">
+                <img src="settingpowder.jpeg" alt="Setting Powder">
+                <h3>Setting Powder</h3>
+                <p>MYR 49.00</p>
+            </div>
+
+            <div class="product-card">
+                <img src="foundation.jpeg" alt="Healthy Glow Foundation">
+                <h3>Healthy Glow Foundation</h3>
+                <p>MYR 69.00</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <!-- Contact Section -->
+            <div>
+                <h4>Contact</h4>
+                <p><strong>BREENA BEAUTY</strong></p>
+                <p>No. 6, Lot G-K 07 Ground Floor,<br>My Town Shopping Center, <br>Jalan Coachchrane, Cheras,<br>55100 Kuala Lumpur</p>
+                <p>Email: <a href="mailto:contact@breenabeauty.com" style="color: #fff;">contact@breenabeauty.com</a></p>
+                <p>Call: +603-2771 1415</p>
+            </div>
+
+            <!-- About Section -->
+            <div>
+                <h4>About</h4>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Our Products</a></li>
+                </ul>
+            </div>
+
+            <!-- Social Links -->
+            <div>
+                <h4>Get in Touch</h4>
+                <div class="social">
+                    <a href="https://www.facebook.com/breenabeauty/" target="_blank">
+                        <img src="facebook.jpeg" alt="Facebook">
+                    </a>
+                    <a href="https://www.instagram.com/breenabeauty/?hl=en" target="_blank">
+                        <img src="instagram.jpeg" alt="Instagram">
+                    </a>
+                    <a href="https://www.whatsapp.my/0182728775/pm" target="_blank">
+                        <img src="whatsapp.jpeg" alt="whatsapp">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="bottom-bar">
+            <p>© 2025 Breena Beauty</p>
+            <p><a href="#" style="color: #fff; text-decoration: none;">Privacy Policy</a> | <a href="#" style="color: #fff; text-decoration: none;">Cookies Policy</a> | <a href="#" style="color: #fff; text-decoration: none;">Terms and Conditions</a></p>
+        </div>
+    </footer>
+
+        <script>
+        const music = new Audio("music.mp3");
+        const musicButton = document.getElementById("music-btn");
+
+        // Restore music state
+        const isMusicPlaying = localStorage.getItem("musicPlaying") === "true";
+
+         if (isMusicPlaying) {
+        music.play();
+        music.loop = true;
+        musicButton.textContent = "Pause Music ⏸️";
+    }
+
+        // Music toggle
+        function toggleMusic() {
+        if (music.paused) {
+            music.play();
+            music.loop = true;
+            localStorage.setItem("musicPlaying", "true");
+            musicButton.textContent = "Pause Music ⏸️";
+        } else {
+            music.pause();
+            localStorage.setItem("musicPlaying", "false");
+            musicButton.textContent = "Play Music 🎵";
+        }
+    }
+      </script>
+    </body>
+</html>                                             

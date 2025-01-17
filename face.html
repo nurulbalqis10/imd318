@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Product Design</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #4e2c2c;
+            color: #fff;
+        }
+
+        header {
+            background-color: #fff;
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            color: #583036;
+            font-size: 2rem;
+        }
+
+        nav {
+            background-color: #f7c7d9;
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #734047;
+            font-size: 1rem;
+            margin: 0 15px;
+            font-weight: bold;
+            position: relative;
+            cursor: pointer;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        nav a:active {
+            transform: scale(1.1);
+            transition: transform 0.2s ease;
+        }
+
+        .banner {
+            width: 100%;
+            max-height: 250px; /* Set maximum height for a smaller banner */
+            object-fit: cover;
+            display: block;
+        }
+
+        .section-title {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 2.5rem;
+            color: #c5a1a1;
+        }
+
+        .product-section {
+        display: flex;
+        justify-content: space-between; 
+        flex-wrap: wrap; 
+        padding: 20px;
+        }
+
+        .product-card {
+        background-color: #734047;
+        border-radius: 10px;
+        padding: 15px;
+        width: 250px; 
+        text-align: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        margin: 10px;
+        position: relative;
+}
+
+        .product-card img {
+            width: 100%;
+            border-radius: 10px;
+            border: 4px solid transparent;
+            box-shadow: 0 0 10px rgba(255, 105, 135, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product-card img:hover {
+            transform: scale(1.2);
+            box-shadow: 0 0 20px rgba(255, 105, 135, 0.9);
+        }
+
+        .color-options {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 10px 0;
+        }
+
+        .color-option {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 2px solid transparent;
+            cursor: pointer;
+        }
+
+        .color-option.selected {
+            border-color: #734047;
+            transform: scale(1.2);
+        }
+
+        .product-name {
+            font-size: 1rem;
+            color: #c5a1a1;
+            margin: 10px 0;
+        }
+
+        .product-shade {
+            font-size: 0.9rem;
+            color: #fff;
+            margin: 5px 0;
+        }
+
+/* Music Button */
+.music-container {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+        }
+
+        .music-btn {
+            background-color: pink;
+            color: white;
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .music-btn:hover {
+            background-color: #734047;
+            transform: scale(1.1);
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>BREENA BEAUTY</h1>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="lips.html">Lips</a>
+        <a href="eye.html">Eye</a>
+        <a href="face.html" class="active">Face</a>
+    </nav>
+
+    <div class="music-container">
+        <button id="music-btn" class="music-btn" onclick="toggleMusic()">Play Music 🎵</button>
+    </div>
+
+    <img src="bannerface.jpeg" alt="Face Banner" class="banner">
+
+    <div class="section-title">Face Product</div>
+
+    <div class="product-section">
+        <div class="product-card">
+            <img src="foundation.jpeg" alt="Healthy Glow Foundation">
+            <h3>HEALTHY GLOW FOUNDATION</h3>
+           <h4><p>MYR 69.00</p></h4>
+            <p>Serum-infused liquid foundation designed to provide medium to full coverage with a natural, radiant finish</p>
+            <div class="color-options">
+                <div class="color-option" style="background-color: #d4a5a5;" data-description="Vanilla"></div>
+                <div class="color-option" style="background-color: #b56767;" data-description="Custard"></div>
+                <div class="color-option" style="background-color: #f3c1c6;" data-description="Honey"></div>
+            </div>
+            <p class="description"></p>
+        </div>
+
+        <div class="product-card">
+            <img src="settingpowder.jpeg" alt="Settings Powder">
+            <h3>SETTING POWDER</h3>
+           <p>Perfect for our humid weather wear. You can wear this alone after skincare for that natural shine-free finish or use it to set you makeup for that long-lasting soft-focus finish</p>
+            <div class="color-options">
+                <div class="color-option" style="background-color: #fff;" data-description="Full size (15g) MYR 49.00"></div>
+                <div class="color-option" style="background-color: #fff;" data-description="Mini / travel size (3g) MYR 20.00"></div>
+            </div>
+            <p class="description"></p>
+        </div>
+
+        <div class="product-card">
+            <img src="brushface.jpeg" alt="Beauty Face Essential Brush">
+            <h3>BEAUTY FACE ESSENTIAL BRUSHIES</h3>
+           <h4><p>MYR 100.00</p></h4>
+           <p>The brushes are made from high-quality synthetic fibres that are soft and gentle on your skin. Take your makeup looks to another level with Breena beauty brushes</p>
+            <div class="color-options">
+                <div class="color-option" style="background-color: #fff;" data-description="B101.Loose powder"></div>
+                <div class="color-option" style="background-color: #fff;" data-description="B103.Apply highlight"></div>
+                <div class="color-option" style="background-color: #fff;" data-description="B104.Blusher"></div>
+            </div>
+            <p class="description"></p>
+        </div>
+
+    <script>
+        const productCards = document.querySelectorAll('.product-card');
+
+        productCards.forEach(card => {
+            const colorOptions = card.querySelectorAll('.color-option');
+            const description = card.querySelector('.description');
+
+            colorOptions.forEach(option => {
+                option.addEventListener('click', () => {
+                    // Remove "selected" class from all options in this card
+                    colorOptions.forEach(opt => opt.classList.remove('selected'));
+
+                    // Add "selected" class to the clicked option
+                    option.classList.add('selected');
+
+                    // Display the description for the selected color
+                    description.textContent = option.getAttribute('data-description');
+                    description.style.display = 'block';
+                });
+            });
+        });
+    
+    const music = new Audio("music.mp3");
+    const musicButton = document.getElementById("music-btn");
+
+    // Restore music state
+    const isMusicPlaying = localStorage.getItem("musicPlaying") === "true";
+
+    if (isMusicPlaying) {
+        music.play();
+        music.loop = true;
+        musicButton.textContent = "Pause Music ⏸️";
+    }
+
+    // Music toggle
+    function toggleMusic() {
+        if (music.paused) {
+            music.play();
+            music.loop = true;
+            localStorage.setItem("musicPlaying", "true");
+            musicButton.textContent = "Pause Music ⏸️";
+        } else {
+            music.pause();
+            localStorage.setItem("musicPlaying", "false");
+            musicButton.textContent = "Play Music 🎵";
+        }
+    }
+
+    </script>
+</body>
+</html>
